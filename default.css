@@ -1,0 +1,89 @@
+/**
+ * Adapted from my default CSS. Colors taken from MediaWiki's OOUI.
+ */
+body {
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+footer {
+	font-size: .7em;
+}
+
+input[type=text] {
+	display: block;
+	width: 21em;
+	font-size: 1em;
+	padding: 4px 2px;
+	margin:2px 0 20px 10px;
+	border-radius: 8px;
+}
+
+input:focus {
+	outline: none;
+}
+
+.error {
+	border: 1px solid #fac5c5;
+	padding: 0.5em 1em;
+	margin-bottom: 1em;
+	display: inline-block;
+	color: #d33;
+	background-color: #fae3e3;
+}
+
+input[type=text]:invalid {
+	box-shadow: 0 0 0 2px #d33;
+	outline-width: 1px;
+	outline-color: #d33;
+}
+
+input[type=text]:focus{
+	box-shadow: 0 0 0 2px #36c;
+	outline-width: 1px;
+	outline-color: #36c;
+}
+
+button[type=submit] {
+	background-color: #36c;
+	border-color: #36c;
+	border-radius: 4px;
+	color: white;
+	padding: .5em .5em;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1em;
+	margin: 4px 2px;
+	cursor: pointer;
+	outline: none;
+}
+
+#help-collapsible {
+	color: #36c;
+	background-color: white;
+	border-color: #36c;
+	padding: .5em .5em;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1em;
+	margin: 4px 2px;
+	cursor: pointer;
+	outline: none;
+}
+
+#help-content {
+	display: none;
+	overflow: hidden;
+}
+
+.active, #help-collapsible:hover {
+	background-color: #ccc;
+}
+
+.score-bad {
+	color: #6b2929;
+}
+
+.score-good {
+	color: #6e5e0c;
+}
