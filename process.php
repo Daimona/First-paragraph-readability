@@ -42,7 +42,7 @@ try {
 function processInput( $catName ) {
 	global $CONFIG;
 
-	$wikiURL = $CONFIG[ 'wiki_url' ] ?? 'en.wikipedia.org';
+	$wikiURL = isset( $CONFIG[ 'wiki_url' ] ) ? $CONFIG[ 'wiki_url' ] : 'en.wikipedia.org';
 	if ( !validateWiki( $wikiURL ) ) {
 		throw new Exception( "Invalid wiki URL: $wikiURL." );
 	}
@@ -86,7 +86,7 @@ function validateName( $name ) {
 function getPageData( $url, $name ) {
 	global $CONFIG;
 
-	$ns = $CONFIG[ 'include_namespaces' ] ?? [ 0 ];
+	$ns = isset( $CONFIG[ 'include_namespaces' ] ) ? $CONFIG[ 'include_namespaces' ] : [ 0 ];
 	if ( $ns !== array_filter( $ns, 'is_numeric' ) ) {
 		throw new Exception( 'The specified "include_namespaces" option is invalid.' );
 	}
