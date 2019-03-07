@@ -17,6 +17,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+// @ToDo Switch to OOP if this code starts to grow and is expanded with new features.
 
 /** Driver code */
 if ( !isset( $_GET[ 'catName' ] ) ) {
@@ -133,7 +134,7 @@ function getPageData( $url, $name ) {
 			$queryBits = array_merge( $queryBits, get_object_vars( $res->continue ) );
 		}
 
-		usleep( MAXLAG_WAIT_SEC * 10e5 );
+		usleep( MAXLAG_WAIT_SEC * 1000000 );
 	} while ( !$finished );
 
 	return $ret;
