@@ -43,17 +43,17 @@ function processInput( $catName ) {
 
 	$wikiURL = $CONFIG[ 'wiki_url' ] ?? 'en.wikipedia.org';
 	if ( !validateWiki( $wikiURL ) ) {
-		throw new Exception( 'Invalid wiki URL: ' . htmlspecialchars( $wikiURL ) . '.' );
+		throw new Exception( "Invalid wiki URL: $wikiURL." );
 	}
 	if ( !validateName( $catName ) ) {
 		// Perform some simple validation to avoid sending a request with an obviously invalid title.
-		throw new Exception( 'Invalid category name: ' . htmlspecialchars( $catName ) . '.' );
+		throw new Exception( "Invalid category name: $catName." );
 	}
 
 	$apiUrl = "https://$wikiURL/w/api.php";
-
 	$data = getPageData( $apiUrl, $catName );
-	// Sort from less readable to most readable
+
+	// Sort from less readable to most readable and show
 	arsort( $data );
 	displayData( $data );
 }

@@ -18,7 +18,7 @@
  */
 
 /**
- * Add basic client-side validation and help toggle
+ * Add basic client-side validation and collapsible logic
  */
 ( function () {
 	$( function() {
